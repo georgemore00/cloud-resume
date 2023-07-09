@@ -9,7 +9,7 @@ on:
       - "backend/**"
 
 env:
-  lambda_name : GetPageVisitsLambda
+  LAMBDA_NAME : GetPageVisitsLambda
 
 jobs:
   deploy-lambda:
@@ -28,6 +28,6 @@ jobs:
       - name: update lambda
         run: |
           aws lambda update-function-code 
-          --function-name  $lambda_name
+          --function-name $LAMBDA_NAME
           --zip-file fileb://deploy.zip
 
