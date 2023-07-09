@@ -5,7 +5,7 @@ import boto3
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('pageVisits')
 
-# For now it does not count unique page-visits
+# Currently it does not count unique page-visits
 def lambda_handler(event, context):
     response = table.update_item(
         Key={

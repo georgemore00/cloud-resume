@@ -27,7 +27,7 @@ jobs:
         run: zip -j deploy.zip backend/src/get_page_visits.py
       - name: update lambda
         run: |
-          aws lambda update-function-code 
-          --function-name $LAMBDA_NAME
-          --zip-file fileb://deploy.zip
+          aws lambda update-function-code \
+          --function-name $LAMBDA_NAME \
+          --zip-file fileb://deploy.zip \
 
