@@ -1,6 +1,6 @@
 # Cloud Resume
 
-This repository is my submission for the Cloud Resume Challenge. It showcases my skills in building a cloud-based resume using various technologies. The project includes a diagram illustrating the architecture of the resume.
+This repository is my solution for the [The Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/). It showcases my skills in building a cloud-based resume using various AWS technologies. The project includes a diagram illustrating the architecture of the resume.
 
 ## Architecture Diagram
 
