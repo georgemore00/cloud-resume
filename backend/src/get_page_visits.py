@@ -1,0 +1,24 @@
+import json
+import boto3
+
+# Instantiate dynamodb object outside the handler
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('pageVisits')
+
+def lambda_handler(event, context):
+    response = table.update_item(
+        Key={
+            'page_counter': 'page_counter_id'
+        },
+        UpdateExpression='SET visitors = visitors + :val',
+        ExpressionAttributeValues={
+            ':val': 1
+        },
+        ReturnValues='UPDATED_NEW'
+    )
+    visitors_count = response['Attributes']['visitors']
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps(f'visitors: {visitors_count}')
+    }
