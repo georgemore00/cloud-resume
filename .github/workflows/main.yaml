@@ -19,4 +19,4 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: sync frontend dir with s3
-      run:  aws s3 sync ./frontend ${{ secrets.BUCKET_WEBSITE_ENDPOINT }}
+      run:  aws s3 sync ./frontend ${{ secrets.BUCKET }}
