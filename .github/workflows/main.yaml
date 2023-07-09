@@ -20,3 +20,5 @@ jobs:
         aws-region: us-east-1
     - name: sync frontend dir with s3
       run:  aws s3 sync ./frontend ${{ secrets.BUCKET }}
+    - name: invalidate cloudfront distribution
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID}}--paths "/*"
