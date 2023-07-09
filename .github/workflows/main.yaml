@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: upload frontend files to s3
+name: deploy to aws
 
 on: 
   push:
@@ -10,5 +10,13 @@ jobs:
   deploy-to-s3:
     runs-on: ubuntu-latest
     steps:
-      - name: print hello world
-        run: echo 'hello world'
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Configure AWS credential
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: list directory
+      run: ls
