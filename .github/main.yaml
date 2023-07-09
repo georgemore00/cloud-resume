@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: upload frontend files to s3
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-s3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo 'hello'
