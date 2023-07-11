@@ -7,6 +7,9 @@ table = dynamodb.Table('pageVisits')
 
 # Currently it does not count unique page-visits
 def lambda_handler(event, context):
+
+    client_ip = event['headers']
+
     response = table.update_item(
         Key={
             'page_counter': 'page_counter_id'
