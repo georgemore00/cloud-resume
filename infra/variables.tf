@@ -1,4 +1,4 @@
 variable "website-domain" {
-  default = "www.georgemoreresume.com"
+  default     = "www.georgemoreresume.com"
   description = "The URL of my website"
 }
