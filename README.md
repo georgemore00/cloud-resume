@@ -1,3 +1,5 @@
+# Recently took down the project due to AWS cost considerations
+
 # Cloud Resume
 
 This repository is my solution for the [The Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/). It showcases my skills in building a cloud-based resume using various AWS technologies. The project includes a diagram illustrating the architecture of the resume.
